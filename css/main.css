@@ -1,0 +1,475 @@
+
+/* starting the custom variables */
+:root {
+    --main-color: #10cab7;
+    --secondary-color: #2c4755; 
+    --padding-section: 60px;
+    --color-section: #f6f6f6;
+    --text-color: #777;
+
+}
+/* Start Components */
+.special-heading {
+    font-weight: 800;
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+}
+.special-heading + p {
+    margin: -30px 0 0 0;
+    font-size: 19px;
+    text-align: center;
+    color: #797979;
+}
+@media (max-width: 767px) {
+    .special-heading{
+        font-size: 50px;
+    }
+    .special-heading + p {
+        margin: -20px;
+    }
+    
+}
+/* end Components */
+
+/* ending the custom variables */
+
+/* start the global rules */
+
+
+/* endig the global rules */
+
+/* the project will be full responsive 
+    we're gonna use the midia query and flex and grid */
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* small */
+@media (min-width: 768) {
+    .container {
+        width:750px;
+    }
+}
+
+/* medium */
+@media (min-width: 992) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px
+    }
+}
+
+/*starting header*/
+
+
+.header{
+    padding: 20px;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    width: 30px;
+}
+
+.header .links{
+    position: relative;
+}
+.header .links:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+
+.header .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .links .icon span{
+    background-color: #333;
+    margin-bottom: 5px; 
+    height: 2px;
+}
+.header .links .icon span:first-child {
+    width: 100%;
+}
+.header .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: .3s;
+}
+.header .links .icon span:nth-child(3) {
+    width: 100px;
+}
+.header .links ul {
+    background-color: var(--color-section);
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    list-style: none;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display:none ;
+    z-index: 1;
+    
+}
+
+.header .links:hover ul{
+    display: block;
+}
+
+.header .links ul::before {
+    content: "";
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right:5px;
+    top: -30px;
+
+    
+    
+}
+
+
+.header .links ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+}
+
+.header .links ul li a:hover {
+    padding: 30px;
+}
+
+.header .links ul li:not(:last-child) a{
+    border-bottom: 1px solid #ddd;
+}
+/*ending header*/
+
+/* 
+Starting landing Section
+*/
+
+.landing{
+    background-image: url(../pic/databasescover.jpg);
+    background-size: cover;
+    height: calc(100vh - 70px);
+    position: relative;
+}
+
+.landing .intro-text{
+    color: #dedede;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width: 100%;
+}
+
+.landing h1{
+    margin: 0;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.landing p{
+    font-size: 19px;
+    line-height: 1.8em;
+    
+
+}
+
+/* Ending Landing Section */
+
+/* starting Materials Section */
+
+.materials{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--color-section);
+}
+.materials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+
+}
+.materials .mat {
+    padding: 20px;
+    text-align: center;
+    
+}
+.materials .mat i{
+    color: var(--main-color);
+}
+.materials .mat h3 {
+    font-weight: 800;
+
+
+}
+.materials .mat p {
+    line-height: 1.8;
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+/* ending Materials Section */
+
+/* starting Skills Section */
+
+.skills .container .skills-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+.skills .container .skills-content .skill {
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+    .skills .container .skills-content .skill {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+}
+.skills i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.skills .text {
+    flex: 1;
+}
+.skills h3 {
+    margin: 0 0 20px;
+}
+.skills p {
+    color: #777;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.skills .image {
+    text-align: center;
+    position:relative;
+}
+.skills .skills-content .image::before {
+    content: " ";
+    background-color: var(--secondary-color);
+    width: 150px;
+    height: calc(100% + 100px);
+    position:absolute;
+    top: -55px;
+    right: 0;
+    z-index: -1;
+    border-radius: 30px 0 30px 0;
+}
+.skills .image img {
+    width: 300px;
+    height: 420px;
+    border-radius: 0 80px 0 80px;
+}
+@media (max-width: 1199px) {
+    .skills .image {
+        display: none;
+    }
+    
+}
+/* ending Skills Section */
+/* starting portofolio Section */
+.portofolio{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--color-section);
+}
+
+.portofolio .container .portofolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+.portofolio .card img{
+    width: 200px;
+    height: 200px;
+    padding-top: 100px;
+    border-radius: 50%;
+    max-width: 100%;
+}
+.portofolio .card{
+    background-color: white;
+    margin-top: 60px;
+    border-radius: 50px;
+    border: 2px solid var(--main-color);
+}
+.portofolio .card .information {
+    padding: 20px;
+}
+.portofolio .card .information h3 {
+    margin: 0;
+}
+.portofolio .card .information p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+/* ending portofolio Section */
+/* start about Section */
+.about {
+    padding-top: var(--padding-section);
+    padding-bottom: calc(var(--padding-section + 60px));
+
+}
+.about .about-content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 991px) {
+    .about .about-content{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.about-content .image img{
+    width: 250px;
+    height: 375px;
+}
+.about .image {
+    position: relative;
+    width: 250px;
+    height: 375px;
+    border: .5px solid var(--main-color)
+}
+@media (max-width: 991px) {
+    .about .image {
+    margin: 0 auto 60px;
+    }
+}
+/* draw the image with before and after */
+.about .image::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-section);
+    width: 80px;
+    height: calc(100% + 80px);
+    top: -40px;
+    z-index: -1;
+    left: -20px;
+    border: 1px solid var(--main-color);
+}
+.about .image::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 281px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 59px solid var(--main-color);
+    top: -36px;
+    z-index: -1;
+    right: -160px;
+    border-radius: 40px;
+}
+@media (max-width: 991px) {
+    .about .image::before, .about .image::after {
+        display: none;
+    }
+}
+.about .text {
+    flex-basis: calc(100% - 450px);
+    /* padding-left: 120px;
+    flex: 1;
+    line-height: 2; */
+}
+.about .text p:first-of-type {
+    font: bold;
+    margin-bottom: 30px;
+
+}
+.about .text hr {
+    width: 60%;
+    border-color: var(--main-color);
+}
+.about .text p:last-of-type{
+    color: var(--text-color );
+}
+/* end about Section */
+/*start contact section */
+.contact {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--color-section);
+}
+.contact .information {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    text-align: center;
+}
+.contact .information .label {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+.contact .information .link {
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--main-color);
+}
+.contact .information .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.contact .information i {
+    padding-left: 10px;
+}
+@media (max-width: 767px) {
+    .contact .information .label,
+    .contact .information .link {
+        font-size: 20px;
+    }
+}
+/*end contact section */ 
+/*start footer */ 
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+.footer span {
+    color: var(--main-color);
+}
+/*end footer */ 
